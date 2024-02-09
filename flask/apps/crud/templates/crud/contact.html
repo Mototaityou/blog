@@ -1,0 +1,28 @@
+{%- extends "/crud/contact_layout.html" %}
+{%- block content %}
+<main>
+  <div class="main-blog">
+    <script src="https://sdk.form.run/js/v2/embed.js"></script>
+    <div class="formrun-embed" data-formrun-form="@youxiangshuigu-arh-tpvnz-1659493152" data-formrun-redirect="true">
+    </div>
+    <a href="https://twitter.com/aroundfiftyjimu" class="twitter-button"><i class="fa-brands fa-twitter"></i></a>
+    <a href="https://twitter.com/intent/tweet?screen_name=aroundfiftyjimu&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false">Tweet to @aroundfiftyjimu</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <aside>
+      <div>
+        <h3 class="aside-profile">プロフィール</h3>
+        <img class="profile-image" src={{ url_for("crud.static", filename="images/photo1.svg" )}} alt="image">
+        <p class="aside-name">Author : 事務員</p>
+        <p class="aside-pi">アラフィフ事務員<br>プログラミング勉強中
+        </p>
+        <ul class="aside-ul">
+          <li class="aside-li"><a {% if index %} active{% endif %} href={{ url_for("crud.index")}}><i class="fa-solid fa-house fa-fw"style="margin-right: 5px;"></i>HOME</a></li>
+          <li class="aside-li"><a {% if about %} active{% endif %} href={{ url_for("crud.about")}}><i class="fa-solid fa-person-walking fa-fw" style="margin-right: 5px;"></i>ABOUT</a></li>
+          <li class="aside-li"><a {% if articles %} active{% endif %} href={{ url_for("crud.articles")}}><i class="fa-solid fa-list-ul fa-fw" style="margin-right: 5px;"></i>ARTICLES</a></li>
+          <li class="aside-li"><a {% if articles %} active{% endif %} href={{ url_for("crud.contact")}}><i class="fa-brands fa-twitter fa-fw" style="margin-right: 5px;"></i>CONTACT</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+  <!--blog-wrapper-->
+</main>
+{%- endblock %}

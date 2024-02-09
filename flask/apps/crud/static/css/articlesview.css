@@ -8,11 +8,6 @@
   box-sizing: border-box;
 }
 
-ul,
-ol {
-  list-style: none;
-}
-
 a {
   color: inherit;
   text-decoration: none;
@@ -61,6 +56,7 @@ img {
   display: flex;
   justify-content: space-between;
   margin-top: 55px;
+  list-style: none;
 }
 .header-site-menu li {
   font-family: "Helvetica Neue";
@@ -79,36 +75,30 @@ img {
 }
 /*main--*/
 .main-blog {
-  display: flex;
-  justify-content: space-between;
+  position: relative;
   margin: 5% 10%;
 }
 /*article--*/
-article {
+.articles {
   width: 74%;
-  margin-right: 10px;
+  margin: 0 0 40px
 }
 .main-blog-atl {
-  display: flex;
-  position: relative; 
+  width: 70%;
+  text-align: center;
 }
 .blog-img {
-  position: absolute;
-  width: 30%;
-}
-.blog-info {
-  position: absolute;
-  margin-left: 35%;
-  border-bottom: 1px solid #808080;
+  width: 70%;
+  margin-bottom: 5%;
 }
 .blog-title {
   font-family: 'BIZ UDPGothic';
-  font-size:  23px;
+  font-size:  2rem;
   font-weight: bold;
   color: #000;
-  margin-bottom: 5px;
+  margin-bottom: 3%;
 }
-time::before {
+.blog-time::before {
   content: '\f2f1';
   font-family: "Font Awesome 5 Free";
   font-weight: bold;
@@ -120,16 +110,55 @@ time::before {
   font-family: "Helvetica Neue";
   font-size: 12px;
   color: #808080;
+  border-bottom: 1px solid #808080;
+  text-align: end;
+}
+h3 {
+  text-align: left;
+  font-size: 1.2em;
+  padding: 5% 0 2%;
+  line-height: 1.7;
+}
+h4 {
+  text-align: left;
+  padding: 5% 0;
+  font-size: 1.05em;
+}
+
+p {
+  font-size: 1em;
+  text-align: left;
+  line-height: 2;
+}
+ol {
+  text-align: left;
+  line-height: 1.6;
+  list-style-position: inside;
+  margin: 3% 0;
+}
+li {
+  letter-spacing: 0.5px;
+  padding: 0.3em 0;
+  text-indent: -1rem;
+  padding-left: 1rem;
+}
+.push {
+  position: relative;
+  height: 200px;
 }
 
 /*asideー*/
 aside {
+  position: absolute;
+  margin-left: 74%;
   width: 22%;
+  top: 0;
 }
 .aside-ul {
   font-family: "Helvetica Neue";
   font-size: 15px;
-  margin: 20px 0;
+  margin: 20px;
+  list-style: none;
 }
 .aside-li {
   margin-bottom: 10px;
@@ -295,15 +324,17 @@ aside {
     margin: 5% 0 0;
   }
   article{
-    width: 100%;
+    position: static;
   }
   aside {
+    position: static;
     width: 100%;
-    margin-top: 30px;
+    margin: 0 0 30px;
   }
   .main-blog-atl,.blog-img,.blog-info {
     display: block;
     position: static;
+    width: 85vw;
   }
   .blog-img {
     width: 100%;

@@ -66,6 +66,14 @@ img {
   font-family: "Helvetica Neue";
   font-size: 15px;
 }
+.header-site-menu li:hover {
+  color: #ffffff;
+  text-shadow: 
+  1px 0 0 black,
+  0 1px 0 black,
+  -1px 0 0 black,
+  0 -1px 0 black;
+}
 .header-inner h1 {
   width: 100%;
   max-width: 1200px;
@@ -79,52 +87,30 @@ img {
 }
 /*main--*/
 .main-blog {
-  display: flex;
-  justify-content: space-between;
+  position: relative;
   margin: 5% 10%;
 }
-/*article--*/
-article {
-  width: 74%;
-  margin-right: 10px;
-}
-.main-blog-atl {
-  display: flex;
-  position: relative; 
-}
-.blog-img {
-  position: absolute;
-  width: 30%;
-}
-.blog-info {
-  position: absolute;
-  margin-left: 35%;
-  border-bottom: 1px solid #808080;
-}
-.blog-title {
-  font-family: 'BIZ UDPGothic';
-  font-size:  23px;
-  font-weight: bold;
-  color: #000;
-  margin-bottom: 5px;
-}
-time::before {
-  content: '\f2f1';
-  font-family: "Font Awesome 5 Free";
-  font-weight: bold;
-  font-size: 11px;
-  margin-right: 5px;
-  color: #808080;
-}
-.blog-time {
-  font-family: "Helvetica Neue";
-  font-size: 12px;
-  color: #808080;
-}
 
+/*contact--*/
+.formrun-embed {
+  width: 74%;
+}
+.twitter-mention-button {
+  margin: 5% 0;
+}
+.twitter-button {
+  font-size: 100px;
+  margin: 5% 13%;
+}
+.twitter-button:hover {
+  color: #808080;
+}
 /*asideー*/
 aside {
+  position: absolute;
+  margin-left: 74%;
   width: 22%;
+  top: 0;
 }
 .aside-ul {
   font-family: "Helvetica Neue";
@@ -134,6 +120,14 @@ aside {
 .aside-li {
   margin-bottom: 10px;
   padding-left: 10px;
+}
+.aside-li:hover {
+  color: #ffffff;
+  text-shadow: 
+  1px 0 0 black,
+  0 1px 0 black,
+  -1px 0 0 black,
+  0 -1px 0 black;
 }
 .aside-profile {
   font-size: 15px;
@@ -151,7 +145,7 @@ aside {
   display: block;
   margin: 10% auto;
 }
-.aside-mane {
+.aside-name {
   text-align: center;
   font-family: "Helvetica Neue",'BIZ UDPGothic';
   font-weight: bold;
@@ -167,6 +161,7 @@ aside {
 .footer {
   width: 100%;
   height: 25px;
+  bottom: 0;
 }
 .footer-copyright {
   text-align: center;
@@ -176,7 +171,8 @@ aside {
 }
 @media (max-width: 600px) {
   .body {
-    margin: 10% 7% 0;
+    width: 100vw;
+    margin: 3% 0 3% 2%;
   }
   .hamgurger-menu {
     display: block;
@@ -277,9 +273,11 @@ aside {
   }
   .header-inner {
     height: 100px;
+    margin: 3%;
   }
   .title-box {
     height: 100px;
+    margin: 9% 0 5% 5%;
   }
   .header-inner h1 {
     font-size: 1.5rem;
@@ -289,46 +287,42 @@ aside {
   }
   .header-logo {
     width: 60px;
+    margin-right: 1%;
   }
   .main-blog {
     display: block;
-    margin: 5% 0 0;
+    width: 100vw;
+    margin: auto;
   }
-  article{
+  .formrun-embed {
     width: 100%;
+  }
+  .twitter-button {
+    margin-left: 35%;
+  }
+  .twitter-mention-button {
+    margin: 5% 16%;
   }
   aside {
-    width: 100%;
-    margin-top: 30px;
-  }
-  .main-blog-atl,.blog-img,.blog-info {
-    display: block;
     position: static;
-  }
-  .blog-img {
     width: 100%;
+    margin-left: 0.5%;
   }
-  .blog-info {
-    margin: 5% 0;
-  }
-  .blog-title {
-    font-size: 1.25rem;
-  }
-  .blog-art {
-    font-size: 1rem;
+  .aside-profile {
+    margin: 0 3% 1.5%;
   }
   .profile-image {
     width: 20vw;
     height: 20vw;
-    margin: 5% 15% 5% 0;
+    margin: 3% 15% 3% 5%;
     display: inline-flex;
     position: relative;
   }
-  .aside-mane,.aside-pi {
+  .aside-name,.aside-pi {
     display: inline-flex;
     position: absolute;
   }
-  .aside-mane {
+  .aside-name {
     margin: 1rem 0;
     font-size: 1rem;
   }
@@ -336,5 +330,12 @@ aside {
     margin: 3rem 0;
     padding: 0;
     font-size: 0.9rem;
+  }
+  .aside-ul {
+    margin-left: 2%;
+  }
+  .footer {
+    bottom: 0;
+    height: -600px;
   }
 }

@@ -1,0 +1,52 @@
+{%- extends "crud/update_layout.html" %}
+{%- block content %}
+<main>
+  <div class="main-blog">
+    <div class="update">
+      <h2>ユーザー新規作成</h2>
+    </div>
+    <form action="{{url_for('auth.signup')}}" method="POST" novalidate="novalidate">
+      {{ form.csrf_token }}
+      <p>
+        {{ form.username.label }} {{ form.username(placeholder="ユーザー名") }}
+      </p>
+      {% for error in form.username.errors %}
+      <span>{{ error }}</span>
+      {% endfor %}
+      <p>
+        {{ form.email.label }} {{ form.email(placeholder="メールアドレス") }}
+      </p>
+      {% for error in form.email.errors %}
+      <span>{{ error }}</span>
+      {% endfor %}
+      <p>
+        {{ form.password.label }} {{ form.password(placeholder="パスワード") }}
+      </p>
+      {% for error in form.password.errors %}
+      <span>{{ error }}</span>
+      {% endfor %}
+      <p>{{ form.submit()}}</p>
+    </form>
+    <aside>
+      <div>
+        <h3 class="aside-profile">プロフィール</h3>
+        <img class="profile-image" src={{ url_for("crud.static", filename="images/photo1.svg" )}} alt="image">
+        <p class="aside-mane">Author : 事務員</p>
+        <p class="aside-pi">アラフィフ事務員<br>プログラミング勉強中
+        </p>
+        <ul class="aside-ul">
+          <li class="aside-li"><a {% if index %} active{% endif %} href={{ url_for("crud.index")}}><i
+                class="fa-solid fa-house fa-fw" style="margin-right: 5px;"></i>HOME</a></li>
+          <li class="aside-li"><a {% if about %} active{% endif %} href={{ url_for("crud.about")}}><i
+                class="fa-solid fa-person-walking fa-fw" style="margin-right: 5px;"></i>ABOUT</a></li>
+          <li class="aside-li"><a {% if articles %} active{% endif %} href={{ url_for("crud.articles")}}><i
+                class="fa-solid fa-list-ul fa-fw" style="margin-right: 5px;"></i>ARTICLES</a></li>
+          <li class="aside-li"><a {% if articles %} active{% endif %} href={{ url_for("crud.contact")}}><i
+                class="fa-brands fa-twitter fa-fw" style="margin-right: 5px;"></i>CONTACT</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+  <!--blog-wrapper-->
+</main>
+{%- endblock %}

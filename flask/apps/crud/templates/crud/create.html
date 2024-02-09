@@ -1,0 +1,16 @@
+{%- extends "crud/layout.html" %}
+{%- block content %}
+<h1>新規作成</h1>
+<form method="POST">
+  <label for="title">タイトル</label>
+  <input type="text" name="title">
+  <label for="short_content">一覧用記事</label>
+  <textarea type="textarea" name="short_content" ></textarea>
+  <label for="content">記事json</label>
+  <textarea type="textarea" name="content"></textarea>
+  <label for="text">写真URL</label>
+  <input type="text" name="image_path">
+  <input type="submit" value="新規登録">
+
+</form>
+{%- endblock %}
