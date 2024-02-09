@@ -33,7 +33,7 @@ session = scoped_session(
 # Base.query = session.query_property()
 
 SECRET_KEY = os.urandom(24)
-WTF_CSRF_SECRET_KEY="u6TLujNueUA993sEEvR"
+WTF_CSRF_SECRET_KEY=os.environ.get("WTF_CSRF_SECRET_KEY")
 
 # おまじない
 SQLALCHEMY_TRACK_MODIFICATIONS = False

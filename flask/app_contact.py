@@ -23,7 +23,7 @@ app.config["SQLALCHEMY_DATABASE_URI"] = 'mysql+pymysql://{user}:{password}@{host
       'db_name': "test"
       })
 app.config['SECRET_KEY'] = os.urandom(24)
-app.config["SECRET_KEY"] = "2AZSMss3p5QPbcY2hBsJ"
+app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 #ログレベルを設定する
 app.logger.setLevel(logging.DEBUG)
 
